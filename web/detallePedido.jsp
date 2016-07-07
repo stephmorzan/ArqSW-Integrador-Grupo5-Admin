@@ -40,7 +40,7 @@
                 <tr>
 
                     <th>#Venta</th>
-                    <!--<th><%out.print("");%></th>-->
+                    <th><%out.print(v.idventa);%>
 
                 </tr>
                 <tr>
@@ -87,6 +87,7 @@
             <a href="verPedidos.jsp">Regresar</a>
 
         </div>
-        
+        <br>
+        <br>
     </body>
 </html>

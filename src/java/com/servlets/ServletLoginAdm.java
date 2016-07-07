@@ -45,23 +45,16 @@ public class ServletLoginAdm extends HttpServlet {
         
         if(loguearVendedor(usuario, clave)==true){
             ses.setAttribute("admin", usuario);
-            //String msj = cargarABaseDeDatos();
             
             String listaPedidos = conseguirPedidos();
             System.out.println(listaPedidos);
-                //if ((listaPedidos!=null || !listaPedidos.equals(""))){
             Gson gson = new Gson();
             List<Pedido> pedidos = gson.fromJson(listaPedidos, new TypeToken<List<Pedido>>(){}.getType());
 
-                ses.setAttribute("pedidos", pedidos);
-                RequestDispatcher rd = request.getRequestDispatcher("verPedidos.jsp");
-                rd.forward(request, response);
-                /*}else{
-                    System.out.println("Ya fuimos =C ");
-                }*/
-            
-            
-            
+            ses.setAttribute("pedidos", pedidos);
+            RequestDispatcher rd = request.getRequestDispatcher("verPedidos.jsp");
+            rd.forward(request, response);
+                
         }
         
         /*

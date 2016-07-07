@@ -5,9 +5,13 @@
  */
 package com.servlets;
 
+import com.clases.Pedido;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.webservices.DulceReal_Service;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +42,11 @@ public class ServletCargarDatos extends HttpServlet {
         HttpSession ses = request.getSession(true);
         String usuario=request.getParameter("admin");
         cargarABaseDeDatos();
+        String listaPedidos = conseguirPedidos();
+        Gson gson = new Gson();
+            List<Pedido> pedidos = gson.fromJson(listaPedidos, new TypeToken<List<Pedido>>(){}.getType());
+
+            ses.setAttribute("pedidos", pedidos);
         ses.setAttribute("admin", usuario);
         RequestDispatcher rd = request.getRequestDispatcher("verPedidos.jsp");
         rd.forward(request, response);
@@ -89,4 +98,12 @@ public class ServletCargarDatos extends HttpServlet {
         return port.cargarABaseDeDatos();
     }
 
+    private String conseguirPedidos() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        com.webservices.DulceReal port = service.getDulceRealPort();
+        return port.conseguirPedidos();
+    }
+
+    
 }

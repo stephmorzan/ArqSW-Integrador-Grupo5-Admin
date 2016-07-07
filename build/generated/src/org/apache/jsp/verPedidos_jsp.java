@@ -69,8 +69,6 @@ public final class verPedidos_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("        ");
-      out.write("\n");
       out.write("        <title>Tabla de Pedidos</title>\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/foundation.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/normalize.css\">\n");
@@ -82,10 +80,10 @@ public final class verPedidos_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <h1>Tabla de Pedidos</h1>\n");
       out.write("        </div>\n");
       out.write("        \n");
-      out.write("        <form action=\"listaPedidos\" method=\"post\">\n");
+      out.write("        \n");
       out.write("            \n");
       out.write("            <div class=\"large-2 columns\"></div>\n");
-      out.write("    \n");
+      out.write("    <form action=\"detallePedidos\" method=\"post\">\n");
       out.write("            <div class=\"large-10 large-centered columns\">\n");
       out.write("        \n");
       out.write("                <table style=\"width: 100%\">\n");
@@ -94,46 +92,46 @@ public final class verPedidos_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <th>ID del Pedido</th>\n");
       out.write("                        <th>Nombre del Cliente</th>\n");
       out.write("                        <th>Costo total</th>\n");
-      out.write("                        <th>Detalles</th>\n");
       out.write("                        \n");
       out.write("                    </tr>\n");
       out.write("                    \n");
-      out.write("                    ");
       out.write("                    \n");
       out.write("                    ");
- for(int i = 0; i < 6; i+=1) { 
+List<Pedido> pedidos = (ArrayList<Pedido>)session.getAttribute("pedidos");
+                    for (Pedido p: pedidos){ 
       out.write("\n");
+      out.write("                                        \n");
+      out.write("                    \n");
       out.write("                    \n");
       out.write("                    <tr>\n");
+      out.write("                    \n");
+      out.write("                        <td><input type=\"submit\"  value=\"");
+out.print(p.idpedido);
+      out.write("\" name=\"id\"/></td>\n");
+      out.write("                    \n");
+      out.write("                        <td>");
+out.print(p.cliente);
+      out.write("</td>\n");
       out.write("                        \n");
-      out.write("                        <td>Pedido #x</td>\n");
+      out.write("                        <td>");
+out.print(p.costoTotal);
+      out.write("</td>\n");
+      out.write("                        \n");
       out.write("                        ");
       out.write("\n");
       out.write("                        \n");
-      out.write("                        <td>100.0</td>\n");
-      out.write("                        ");
-      out.write("\n");
-      out.write("                        \n");
-      out.write("                        <td>Jotade</td>\n");
-      out.write("                        ");
-      out.write("\n");
-      out.write("                        \n");
-      out.write("                        ");
-      out.write("\n");
-      out.write("                        \n");
-      out.write("                        <td><a href=\"#\">Detalles</a></td>\n");
       out.write("                    </tr>\n");
       out.write("                    \n");
       out.write("                    ");
 }
       out.write("\n");
-      out.write("                    ");
-      out.write("\n");
+      out.write("                    \n");
       out.write("                    \n");
       out.write("                </table>\n");
       out.write("\n");
       out.write("            </div>\n");
-      out.write("    \n");
+      out.write("    </form>\n");
+      out.write("        <form action=\"cargarDeBD\" method=\"post\">\n");
       out.write("            <div class=\"large-2 columns\"></div>\n");
       out.write("            \n");
       out.write("                <div class=\"large-only-text-center medium-only-text-center small-only-text-center\">                    \n");
@@ -171,7 +169,7 @@ public final class verPedidos_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_c_set_0.setParent(null);
     _jspx_th_c_set_0.setVar("usuario");
     _jspx_th_c_set_0.setScope("session");
-    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.usuario}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.admin}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_set_0 = _jspx_th_c_set_0.doStartTag();
     if (_jspx_th_c_set_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_set_var_value_scope_nobody.reuse(_jspx_th_c_set_0);

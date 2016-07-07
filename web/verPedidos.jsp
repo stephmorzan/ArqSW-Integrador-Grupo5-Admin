@@ -77,7 +77,8 @@
                 Supongo que ya lo sabías pero porsiacaso C: --%>
                                 
             </div>
-            
+                <br>
+                <br>
         </form>
         
     </body>

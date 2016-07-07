@@ -48,9 +48,11 @@ public class ServletDetallarPedido extends HttpServlet {
         int idpedido = Integer.parseInt(id);
         String listaVentas = conseguirVentar(idpedido);
         List<Venta> ventas = new Gson().fromJson(listaVentas, new TypeToken<List<Venta>>(){}.getType());
-        System.out.println(ventas);
         ses.setAttribute("admin", usuario);
         ses.setAttribute("ventas", ventas);
+        for(Venta v: ventas){
+            System.out.println(v.idventa);
+        }
         RequestDispatcher rd = request.getRequestDispatcher("detallePedido.jsp");
         rd.forward(request, response);
         
