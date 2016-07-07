@@ -5,10 +5,14 @@
  */
 package com.servlets;
 
+import com.clases.Venta;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.webservices.CargarABaseDeDatos;
 import com.webservices.DulceReal_Service;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,13 +42,14 @@ public class ServletDetallarPedido extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession ses = request.getSession(true);
-        //String usuario=request.getParameter("admin");
+        String usuario=request.getParameter("admin");
         String id = request.getParameter("id");
         System.out.println(id);
         int idpedido = Integer.parseInt(id);
-        String ventas = conseguirVentar(idpedido);
+        String listaVentas = conseguirVentar(idpedido);
+        List<Venta> ventas = new Gson().fromJson(listaVentas, new TypeToken<List<Venta>>(){}.getType());
         System.out.println(ventas);
-        //ses.setAttribute("admin", usuario);
+        ses.setAttribute("admin", usuario);
         ses.setAttribute("ventas", ventas);
         RequestDispatcher rd = request.getRequestDispatcher("detallePedido.jsp");
         rd.forward(request, response);

@@ -14,7 +14,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <c:set var="usuario" scope="session" value="${sessionScope.admin}"/>
-        <%--${sessionScope.usuario}--%>
         <title>Tabla de Pedidos</title>
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -49,13 +48,11 @@
                     
                     <tr>
                     
-                        <td><%out.print(p.idpedido);%></td>
+                        <td><input type="submit"  value="<%out.print(p.idpedido);%>" name="id"/></td>
                     
                         <td><%out.print(p.cliente);%></td>
                         
                         <td><%out.print(p.costoTotal);%></td>
-                        
-                        <td><input type="submit"  value="<%out.print(p.idpedido);%>" name="id"/></td>
                         
                         <%-- Deje comentado los datos de los pedidos, asumo que vendrán en una lista --%>
                         

@@ -36,7 +36,9 @@ public class ServletCargarDatos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession ses = request.getSession(true);
+        String usuario=request.getParameter("admin");
         cargarABaseDeDatos();
+        ses.setAttribute("admin", usuario);
         RequestDispatcher rd = request.getRequestDispatcher("verPedidos.jsp");
         rd.forward(request, response);
     }

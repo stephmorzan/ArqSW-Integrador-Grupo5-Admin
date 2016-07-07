@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <c:set var="usuario" scope="session" value="${sessionScope.usuario}"/>
+        <c:set var="usuario" scope="session" value="${sessionScope.admin}"/>
         <%--${sessionScope.usuario}--%>
         <title>Tabla de Pedidos</title>
         <link rel="stylesheet" href="css/foundation.css">
