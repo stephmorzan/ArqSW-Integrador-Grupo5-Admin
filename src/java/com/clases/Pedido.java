@@ -18,6 +18,7 @@ public class Pedido {
     public float costoTotal=0.0f;
     public String cliente;
     public List<Venta> ventas;
+    public String fecha;
 
 
     public Pedido(String cliente, List<Venta> ventas) {

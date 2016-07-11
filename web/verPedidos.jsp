@@ -37,6 +37,7 @@
                         <th>ID del Pedido</th>
                         <th>Nombre del Cliente</th>
                         <th>Costo total</th>
+                        <th>Fecha</th>
                         
                     </tr>
                     
@@ -53,6 +54,8 @@
                         <td><%out.print(p.cliente);%></td>
                         
                         <td><%out.print(p.costoTotal);%></td>
+                        
+                        <td><%out.print(p.fecha);%></td>
                         
                         <%-- Deje comentado los datos de los pedidos, asumo que vendrán en una lista --%>
                         
