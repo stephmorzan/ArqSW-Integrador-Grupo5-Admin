@@ -16,9 +16,9 @@
 
 <xs:element name="conseguirProdsResponse" type="tns:conseguirProdsResponse"/>
 
-<xs:element name="conseguirVentar" type="tns:conseguirVentar"/>
+<xs:element name="conseguirVentas" type="tns:conseguirVentas"/>
 
-<xs:element name="conseguirVentarResponse" type="tns:conseguirVentarResponse"/>
+<xs:element name="conseguirVentasResponse" type="tns:conseguirVentasResponse"/>
 
 <xs:element name="loguearCliente" type="tns:loguearCliente"/>
 
@@ -28,15 +28,9 @@
 
 <xs:element name="loguearVendedorResponse" type="tns:loguearVendedorResponse"/>
 
-<xs:complexType name="conseguirProds">
-<xs:sequence/>
-</xs:complexType>
+<xs:element name="mostrarPorCliente" type="tns:mostrarPorCliente"/>
 
-<xs:complexType name="conseguirProdsResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
+<xs:element name="mostrarPorClienteResponse" type="tns:mostrarPorClienteResponse"/>
 
 <xs:complexType name="loguearCliente">
 <xs:sequence>
@@ -48,6 +42,16 @@
 <xs:complexType name="loguearClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conseguirProds">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="conseguirProdsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -74,23 +78,23 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="conseguirVentar">
-<xs:sequence>
-<xs:element name="idpedido" type="xs:int" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="conseguirVentarResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="cargarABaseDeDatos">
 <xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="cargarABaseDeDatosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conseguirVentas">
+<xs:sequence>
+<xs:element name="idpedido" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conseguirVentasResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -103,6 +107,18 @@
 </xs:complexType>
 
 <xs:complexType name="cargarALaColaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarPorCliente">
+<xs:sequence>
+<xs:element name="idcliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarPorClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

@@ -11,7 +11,6 @@ import com.google.gson.reflect.TypeToken;
 import com.webservices.CargarABaseDeDatos;
 import com.webservices.DulceReal_Service;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,7 +45,7 @@ public class ServletDetallarPedido extends HttpServlet {
         String id = request.getParameter("id");
         System.out.println(id);
         int idpedido = Integer.parseInt(id);
-        String listaVentas = conseguirVentar(idpedido);
+        String listaVentas = conseguirVentas(idpedido);
         List<Venta> ventas = new Gson().fromJson(listaVentas, new TypeToken<List<Venta>>(){}.getType());
         ses.setAttribute("admin", usuario);
         ses.setAttribute("ventas", ventas);
@@ -98,11 +97,11 @@ public class ServletDetallarPedido extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private String conseguirVentar(java.lang.Integer idpedido) {
+    private String conseguirVentas(java.lang.Integer idpedido) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         com.webservices.DulceReal port = service.getDulceRealPort();
-        return port.conseguirVentar(idpedido);
+        return port.conseguirVentas(idpedido);
     }
 
     private String cargarABaseDeDatos() {

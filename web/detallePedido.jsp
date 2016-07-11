@@ -27,12 +27,10 @@
         </div>
         
         <div class="large-2 columns"></div>
-
+        
         <div class="large-5 large-centered columns">
-
+            
             <table style="width: 100%">
-
-
                 
                 <%List<Venta> ventas = (ArrayList<Venta>)session.getAttribute("ventas");
                 for (Venta v: ventas){ %>

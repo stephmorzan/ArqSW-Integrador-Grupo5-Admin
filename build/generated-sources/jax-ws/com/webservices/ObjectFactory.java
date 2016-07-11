@@ -31,11 +31,13 @@ public class ObjectFactory {
     private final static QName _ConseguirPedidos_QNAME = new QName("http://webservices.com/", "conseguirPedidos");
     private final static QName _ConseguirProdsResponse_QNAME = new QName("http://webservices.com/", "conseguirProdsResponse");
     private final static QName _ConseguirProds_QNAME = new QName("http://webservices.com/", "conseguirProds");
+    private final static QName _MostrarPorCliente_QNAME = new QName("http://webservices.com/", "mostrarPorCliente");
+    private final static QName _ConseguirVentasResponse_QNAME = new QName("http://webservices.com/", "conseguirVentasResponse");
+    private final static QName _ConseguirVentas_QNAME = new QName("http://webservices.com/", "conseguirVentas");
     private final static QName _CargarABaseDeDatos_QNAME = new QName("http://webservices.com/", "cargarABaseDeDatos");
-    private final static QName _ConseguirVentar_QNAME = new QName("http://webservices.com/", "conseguirVentar");
-    private final static QName _ConseguirVentarResponse_QNAME = new QName("http://webservices.com/", "conseguirVentarResponse");
     private final static QName _LoguearVendedor_QNAME = new QName("http://webservices.com/", "loguearVendedor");
     private final static QName _LoguearVendedorResponse_QNAME = new QName("http://webservices.com/", "loguearVendedorResponse");
+    private final static QName _MostrarPorClienteResponse_QNAME = new QName("http://webservices.com/", "mostrarPorClienteResponse");
     private final static QName _CargarALaColaResponse_QNAME = new QName("http://webservices.com/", "cargarALaColaResponse");
     private final static QName _LoguearCliente_QNAME = new QName("http://webservices.com/", "loguearCliente");
 
@@ -47,19 +49,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConseguirVentar }
-     * 
-     */
-    public ConseguirVentar createConseguirVentar() {
-        return new ConseguirVentar();
-    }
-
-    /**
      * Create an instance of {@link CargarABaseDeDatos }
      * 
      */
     public CargarABaseDeDatos createCargarABaseDeDatos() {
         return new CargarABaseDeDatos();
+    }
+
+    /**
+     * Create an instance of {@link ConseguirVentas }
+     * 
+     */
+    public ConseguirVentas createConseguirVentas() {
+        return new ConseguirVentas();
     }
 
     /**
@@ -79,14 +81,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConseguirVentarResponse }
-     * 
-     */
-    public ConseguirVentarResponse createConseguirVentarResponse() {
-        return new ConseguirVentarResponse();
-    }
-
-    /**
      * Create an instance of {@link LoguearVendedor }
      * 
      */
@@ -100,6 +94,30 @@ public class ObjectFactory {
      */
     public LoguearVendedorResponse createLoguearVendedorResponse() {
         return new LoguearVendedorResponse();
+    }
+
+    /**
+     * Create an instance of {@link MostrarPorClienteResponse }
+     * 
+     */
+    public MostrarPorClienteResponse createMostrarPorClienteResponse() {
+        return new MostrarPorClienteResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConseguirVentasResponse }
+     * 
+     */
+    public ConseguirVentasResponse createConseguirVentasResponse() {
+        return new ConseguirVentasResponse();
+    }
+
+    /**
+     * Create an instance of {@link MostrarPorCliente }
+     * 
+     */
+    public MostrarPorCliente createMostrarPorCliente() {
+        return new MostrarPorCliente();
     }
 
     /**
@@ -222,30 +240,39 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarPorCliente }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices.com/", name = "mostrarPorCliente")
+    public JAXBElement<MostrarPorCliente> createMostrarPorCliente(MostrarPorCliente value) {
+        return new JAXBElement<MostrarPorCliente>(_MostrarPorCliente_QNAME, MostrarPorCliente.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConseguirVentasResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices.com/", name = "conseguirVentasResponse")
+    public JAXBElement<ConseguirVentasResponse> createConseguirVentasResponse(ConseguirVentasResponse value) {
+        return new JAXBElement<ConseguirVentasResponse>(_ConseguirVentasResponse_QNAME, ConseguirVentasResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConseguirVentas }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices.com/", name = "conseguirVentas")
+    public JAXBElement<ConseguirVentas> createConseguirVentas(ConseguirVentas value) {
+        return new JAXBElement<ConseguirVentas>(_ConseguirVentas_QNAME, ConseguirVentas.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CargarABaseDeDatos }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservices.com/", name = "cargarABaseDeDatos")
     public JAXBElement<CargarABaseDeDatos> createCargarABaseDeDatos(CargarABaseDeDatos value) {
         return new JAXBElement<CargarABaseDeDatos>(_CargarABaseDeDatos_QNAME, CargarABaseDeDatos.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConseguirVentar }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservices.com/", name = "conseguirVentar")
-    public JAXBElement<ConseguirVentar> createConseguirVentar(ConseguirVentar value) {
-        return new JAXBElement<ConseguirVentar>(_ConseguirVentar_QNAME, ConseguirVentar.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConseguirVentarResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservices.com/", name = "conseguirVentarResponse")
-    public JAXBElement<ConseguirVentarResponse> createConseguirVentarResponse(ConseguirVentarResponse value) {
-        return new JAXBElement<ConseguirVentarResponse>(_ConseguirVentarResponse_QNAME, ConseguirVentarResponse.class, null, value);
     }
 
     /**
@@ -264,6 +291,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices.com/", name = "loguearVendedorResponse")
     public JAXBElement<LoguearVendedorResponse> createLoguearVendedorResponse(LoguearVendedorResponse value) {
         return new JAXBElement<LoguearVendedorResponse>(_LoguearVendedorResponse_QNAME, LoguearVendedorResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarPorClienteResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices.com/", name = "mostrarPorClienteResponse")
+    public JAXBElement<MostrarPorClienteResponse> createMostrarPorClienteResponse(MostrarPorClienteResponse value) {
+        return new JAXBElement<MostrarPorClienteResponse>(_MostrarPorClienteResponse_QNAME, MostrarPorClienteResponse.class, null, value);
     }
 
     /**
